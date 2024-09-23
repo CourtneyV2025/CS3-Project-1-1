@@ -1,10 +1,7 @@
-# You can initializae important data at the top of the page 
-score = 0
 trivia = { "q": "question", "a": "correct answer", "options": ["choice a", "choice b", "choice c", "choice d", "choice e", "choice f"]},
 
 trivia = [
-    { 
-     "question": "How many presidents were born in Virginia?",
+    {"question": ["How many presidents were born in Virginia?"],
         "answer": 8,
         "options": [1, 2, 4, 5, 7, 8, 11]
      },
@@ -47,9 +44,34 @@ trivia = [
 ]
 
 
+def ask_question(question, answer, options):
+    # 1. Print out a question from the trivia list
 
+    # 2. Print out the options (list)
+
+    # 2. Get user input
+        #choice = input("Your answer:")
+        #print(choice)
+
+    # 3. Check if choice matches correct answer 
+    return False
+
+# Main method for game loop 
 def main():
     print("Let's play 🇺🇸 US Presidents 🇺🇸 Trivia!! ")
+    score = 0
+
+    current = trivia[0] #dictionary
+    # Get data from that item
+    q = current["question"]
+    a = current["answer"]
+    ops = current["options"]
+    # Pass in q, a, and options into ask_question
+    is_correct = ask_question(q, a, ops)
+    print(q, a, ops)
+
+    # Update score accordingly
+
 
 
 if __name__ == "__main__":
