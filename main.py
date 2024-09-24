@@ -2,59 +2,60 @@ trivia = { "q": "question", "a": "correct answer", "options": ["choice a", "choi
 
 trivia = [
     {"question": ["How many presidents were born in Virginia?"],
-        "answer": 8,
-        "options": [1, 2, 4, 5, 7, 8, 11]
+        "answer": "eight",
+        "options": ["one", "two", "four", "five", "seven", "eight", "eleven"]
      },
     { "question": "How many presidents were born in New York?",
-        "answer": 5,
-        "options": [1, 2, 4, 5, 6, 10]
+        "answer": "five",
+        "options": ["one", "two", "four", "five", "six", "ten"]
      },
     { "question": "How many presidents were born in Ohio?",
-        "answer": 7,
-        "options": [1, 2, 4, 5, 7, 8]
+        "answer": "seven",
+        "options": ["one", "two", "four", "five", "seven", "eight"]
      },
     { "question": "How many presidents were born in Texas?",
-        "answer": 2,
-        "options": [1, 2, 4, 5, 7, 8]
+        "answer": "two",
+        "options": ["one", "two", "four", "five", "seven", "eight"]
      },
     { "question": "How many presidents were born in Pennsylvania?",
-        "answer": 2,
-        "options": [0, 1, 2, 5, 7, 8]
+        "answer": "two",
+        "options": ["zero", "one", "two", "five", "seven", "eight"]
      },
     { "question": "How many presidents were born in Vermont?",
-        "answer": 2,
-        "options": [0, 2, 4, 5, 7, 8, 9]
+        "answer": "two",
+        "options": ["zero", "two", "four", "five", "seven", "eight", ]
      },
     { "question": "How many presidents were born in Iowa?",
-        "answer": 1,
-        "options": [0, 1, 4, 5, 7, 9]
+        "answer": "one",
+        "options": ["zero", "one", "four", "five", "seven", "nine"]
      },
     { "question": "How many presidents were born in Illinois?",
-        "answer": 1,
-        "options": [1, 3, 4, 6, 7, 8]
+        "answer": "one",
+        "options": ["one", "three", "four", "six", "seven", "eight"]
      },
     { "question": "How many presidents were born in Massachussets?",
-        "answer": 4,
-        "options": [1, 2, 4, 5, 7, 9]
+        "answer": "four",
+        "options": ["one", "two", "four", "five", "seven", "nine"]
      },
     { "question": "How many presidents were born in North Carolina?",
-        "answer": 2,
-        "options": [1, 2, 3, 6, 7, 8]
+        "answer": "two",
+        "options": ["one", "two", "three", "six", "seven", "eight"]
      }
 ]
 
-
 def ask_question(question, answer, options):
     # 1. Print out a question from the trivia list
-
+    print(question)
     # 2. Print out the options (list)
-
+    for option in options: 
+            print(f" {option}")
     # 2. Get user input
-        #choice = input("Your answer:")
-        #print(choice)
-
-    # 3. Check if choice matches correct answer 
+    choice = input ("Enter answer: ")
+    if choice.lower() == answer.lower():
+         return True
     return False
+    # 3. Check if choice matches correct answer 
+       
 
 # Main method for game loop 
 def main():
@@ -68,10 +69,12 @@ def main():
     ops = current["options"]
     # Pass in q, a, and options into ask_question
     is_correct = ask_question(q, a, ops)
-    print(q, a, ops)
-
+    print(is_correct)
+ 
     # Update score accordingly
-
+    if is_correct:
+         score+=1
+    print()
 
 
 if __name__ == "__main__":
