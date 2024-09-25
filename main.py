@@ -76,9 +76,11 @@ def main():
         # Update score accordingly
         if is_correct:
             score+=1
+            print("Good Job!")
         print("current score: ",(score))
     # Display final score
-    print(score)
+    print("total score: ", (score))
+    print("Congratulations! You finished the quiz. Would you like to play again?")
 
 if __name__ == "__main__":
     main()
